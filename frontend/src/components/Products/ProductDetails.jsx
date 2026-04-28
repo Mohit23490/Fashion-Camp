@@ -64,7 +64,7 @@ const ProductDetails = ({productId}) => {
     const [mainImage, setmainImage] = useState(null)
     const [selectedSize, setselectedSize] = useState("")
     const [selectedColor, setselectedColor] = useState("")
-    const [Quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(1)
     const [isButtonDisabled, setisButtonDisabled] = useState(false)
     const productFetchId = productId || id;
     useEffect(() => {
@@ -78,7 +78,7 @@ const ProductDetails = ({productId}) => {
 
     const handleQuantityChange = (action) =>{
         if(action === "plus") setQuantity((prev) => prev +1 );
-        if(action === "minus" && Quantity > 1) setQuantity((prev) => prev -1)
+        if(action === "minus" && quantity > 1) setQuantity((prev) => prev -1)
     }
     useEffect(() => {
       if(selectedProduct?.images?.length > 0) {
@@ -102,7 +102,7 @@ const ProductDetails = ({productId}) => {
 
      dispatch(
         addToCart({productId:productFetchId,
-            Quantity,
+            quantity,
             size:selectedSize,
             color:selectedColor,
             guestId,
@@ -227,7 +227,7 @@ const ProductDetails = ({productId}) => {
                     }} 
                     className="px-2 py-1 bg-gray-200 rounded text-lg " >-</button>
                     <span className='text-lg mx-4 '>
-                      {Quantity}
+                      {quantity}
                     </span>
                      <button 
                      onClick={() =>{
