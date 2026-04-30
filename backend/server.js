@@ -67,7 +67,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: [
-    "https://fashion-camp-uxc7.vercel.app", // your frontend
+    "https://fashion-camp-9p4s.vercel.app", // your frontend
     "http://localhost:5173",                  // vite dev
     "http://localhost:3000",
   ],
